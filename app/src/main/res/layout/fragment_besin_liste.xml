@@ -30,7 +30,7 @@
             app:layout_constraintVertical_bias="0.0" />
 
         <ProgressBar
-            android:id="@+id/progressBar"
+            android:id="@+id/yukleniyorProgressBar"
             style="?android:attr/progressBarStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -40,7 +40,7 @@
             app:layout_constraintTop_toTopOf="@+id/besinRecyclerView" />
 
         <TextView
-            android:id="@+id/yüklenmeHataMesaji"
+            android:id="@+id/yuklenmeHataMesaji"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Lütfen Yüklemeyi Tekrar Deneyiniz"
