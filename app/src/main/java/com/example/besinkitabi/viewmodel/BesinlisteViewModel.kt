@@ -13,7 +13,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
-//androidviewmodel ve viewmodel paketlerinn farkı android viewmodel içinde contexte ulaşabilmemizdir
+//androidviewmodel ve viewmodel paketlerin farkı android viewmodel içinde contexte ulaşabilmemizdir
 //contexte ulaşmamız gereken viewmodel classlarında androidviewmodel kullanırız
 
 class BesinlisteViewModel(application: Application) : AndroidViewModel(application) {
@@ -26,7 +26,7 @@ class BesinlisteViewModel(application: Application) : AndroidViewModel(applicati
     private val ozelSharedPreferences = OzelSharedPreferences(getApplication())
 
 
-    private var guncellemeZamani = 10 * 60 * 1000 * 1000 * 1000L
+    private var guncellemeZamani = 1 * 60 * 1000 * 1000 * 1000L
 
     fun refreshData() {
         val kaydedilmeZamani = ozelSharedPreferences.zamaniAl()

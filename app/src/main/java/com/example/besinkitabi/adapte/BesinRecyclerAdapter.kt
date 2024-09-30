@@ -1,5 +1,6 @@
 package com.example.besinkitabi.adapte
 
+import android.annotation.SuppressLint
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -7,6 +8,8 @@ import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 import com.example.besinkitabi.databinding.BesinRecyclerRowBinding
 import com.example.besinkitabi.model.Besin
+import com.example.besinkitabi.util.gorselIndir
+import com.example.besinkitabi.util.placeHolderYap
 import com.example.besinkitabi.view.BesinListeFragmentDirections
 
 class BesinRecyclerAdapter(val besinListesi : ArrayList<Besin>) : RecyclerView.Adapter<BesinRecyclerAdapter.BesinViewHolder>() {
@@ -25,6 +28,7 @@ class BesinRecyclerAdapter(val besinListesi : ArrayList<Besin>) : RecyclerView.A
         return besinListesi.size
     }
 
+    @SuppressLint("NotifyDataSetChanged")
     fun updatebesinList(newBesinList : List<Besin>){
         besinListesi.clear()
         besinListesi.addAll(newBesinList)
@@ -39,6 +43,8 @@ class BesinRecyclerAdapter(val besinListesi : ArrayList<Besin>) : RecyclerView.A
             val action = BesinListeFragmentDirections.actionBesinListeFragment2ToBesinDetayFragment2(besinListesi[position].uuid)
             Navigation.findNavController(it).navigate(action)
         }
+
+        besinListesi[position].besinGorsel?.let { holder.binding.besinImageView.gorselIndir(it, placeHolderYap(holder.itemView.context)) }
 
     }
 
